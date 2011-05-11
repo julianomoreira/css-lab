@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>CSS3 Effects | A new direction to web design.</title>
+		<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+		<style>
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td 
+{ margin : 0; padding : 0; }
+h1,h2,h3,h4,h5,h6 { font-size : 100%; }
+ol,ul { list-style : none; }
+table { border-collapse : collapse; border-spacing : 0; }
+fieldset,img { border : 0; }
+hr {visibility: hidden; line-height: 1.2em}
+body {font-family: HelveticaNeue, Helvetica, sans-serif; background-color: #ededed; padding: 0 0 5em 0;}
+
+.wrapper {
+	width: 100%;
+	border-bottom: 1px solid rgba(0,0,0,.25);	
+}
+.wrapper:nth-child(even) {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#ededed), color-stop(.5,#fff));
+}
+.wrapper:nth-child(odd) {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ededed), to(#fff), color-stop(.5,#fff))
+}
+.example {
+	width: 740px;
+	margin: 0 auto;
+	padding: 2em 0;
+}
+.example h1 {
+	text-align: center;
+	padding: 10px 0;
+	color: rgba(0,0,0,.75);
+	text-shadow: 0px 1px 1px rgba(255,255,255,.75);
+	font-size: 1.5em;
+}
+.example1 .images {
+	width: 450px;
+	height: 300px;
+	margin: 0 auto;
+	position: relative;
+	-webkit-box-shadow: 0 0 1.5em rgba(0,0,0,.5);
+}
+.example1 .images img {
+	max-width: 100%;
+	position: absolute;
+	left: 0;
+	-webkit-transition: opacity 1s ease-in-out;
+}
+.example1 .images img.top:hover {
+	opacity: 0;
+}
+.example2 .images {
+	width: 450px;
+	height: 300px;
+	margin: 0 auto;
+	position: relative;
+	-webkit-box-shadow: 0 0 1.5em rgba(0,0,0,.5);
+}
+.example2 .images img {
+	max-width: 100%;
+	position: absolute;
+	left: 0;
+	-webkit-transition: opacity 1s ease-in-out;
+}
+.example2 img.transparent {
+	opacity: 0;
+}
+p#clickMe {text-align: center; cursor: pointer; padding: 15px 0 0 0;}		
+
+.example3 .imagesContainer {
+	width: 450px;
+	height: 300px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	-webkit-box-shadow: 0 0 1.5em rgba(0,0,0,.5);
+	-moz-box-shadow:0 0 1.5em rgba(0,0,0,.5);
+}
+.example3 .images {
+	position: absolute;
+	left: 0px;
+	width: 1800px;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1.0s ease-in-out;
+	-o-transition: all 1.0s ease-in-out;
+	transition: all 1.0s ease-in-out;	
+}
+.example3 .imagesContainer img {
+	float: left;
+}
+.example3 .controls {
+	width: 450px;
+	margin: 15px auto;
+}
+.example3 .controls li {
+	display: inline;
+	margin: 0 25px;
+	cursor: pointer;
+	text-shadow: 0px 1px 1px rgba(255,255,255,.75);	
+}
+
+.example4 .imagesContainer {
+	width: 450px;
+	height: 300px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	-webkit-box-shadow: 0 0 1.5em rgba(0,0,0,.5);
+	-moz-box-shadow:0 0 1.5em rgba(0,0,0,.5);
+}
+.example4 .images {
+	position: absolute;
+	left: 0px;
+	width: 1800px;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1.0s ease-in-out;
+	-o-transition: all 1.0s ease-in-out;
+	transition: all 1.0s ease-in-out;		
+}
+.example4 .imagesContainer img {
+	float: left;
+}
+.example4 .controls {
+	width: 450px;
+	margin: 15px auto;
+}
+.example4 .controls li {
+	display: inline;
+	margin: 0 25px;
+	cursor: pointer;
+	text-shadow: 0px 1px 1px rgba(255,255,255,.75);	
+}
+
+.example5 .container {
+	position: relative;
+	margin: 10px auto;
+	width: 450px;
+	height: 500px;
+	z-index: 1;
+}
+.back {
+	display: block;
+}
+.example5 .container {
+	-webkit-perspective: 1000; /* only applies to children of this element and not the element itself. */
+}
+.example5 .container .card {
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: all 1.0s linear;
+}
+.example5 .container .card img {
+-webkit-box-reflect: below 1px -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), color-stop(0.65, transparent), to(white)) 0 0 0 0 stretch stretch;
+}
+.example5 .container:hover .card {
+	-webkit-transform: rotateY(180deg);
+	-webkit-box-shadow: -5px 5px 5px #aaa;				
+	-moz-box-shadow: -5px 5px 5px #aaa;
+	box-shadow: -5px 5px 5px #aaa;
+}
+.example5 .container .face {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+}
+.back {
+	display: block;
+	-webkit-transform: rotateY(180deg);
+	-webkit-box-sizing: border-box;
+	padding: 10px;
+	color: #333;
+	text-align: center;
+	background-color: #aaa;
+	border: 5px solid #000;	
+}
+
+		</style>
+		<script type="text/javascript">		
+
+			$(document).ready(function(){
+				$('#clickMe').click(function(){
+					$('.example2 img.top').toggleClass('transparent');
+				});
+				
+				// Sliding padding
+				var $images = $(this).parents().prevAll('.imagesContainer').children();
+				$('.controls li#btn1').click(function(){
+					var $images = $(this).parents().prevAll('.imagesContainer').children();
+					$images.css("-webkit-transform","translate(0px,0px)");
+					//$('.images').css("-webkit-transform","translate(0px,0px)");
+				});
+				$('.controls li#btn2').click(function(){
+					var $images = $(this).parents().prevAll('.imagesContainer').children();
+					$images.css("-webkit-transform","translate(-450px,0px)");
+					//$('.images').css("-webkit-transform","translate(-450px,0px)");
+				});
+				$('.controls li#btn3').click(function(){
+					var $images = $(this).parents().prevAll('.imagesContainer').children();
+					$images.css("-webkit-transform","translate(-900px,0px)");
+					//$('.images').css("-webkit-transform","translate(-900px,0px)");
+				});
+				$('.controls li#btn4').click(function(){
+					var $images = $(this).parents().prevAll('.imagesContainer').children();
+					$images.css("-webkit-transform","translate(-1350px,0px)");					
+					//$('.images').css("-webkit-transform","translate(-1350px,0px)");
+				});
+			});
+			
+			
+		</script>
+	</head>
+	<body>
+
+	
+	<div class="wrapper">
+		<div class="example example1">
+			<h1>CSS3 Hover Transition</h1>
+			<div class="images">
+				<img src="bby-basket-court.jpg" alt="bby-basket-court" class="bottom" />
+				<img src="bby-park.jpg" alt="bby-park" class="top" />
+			</div>
+		</div><!-- example -->
+	</div><!-- wrapper -->
+
+	<div class="wrapper">
+		<div class="example example2">
+		    <h1>CSS3 Toggle Transition</h1>
+		    <div class="images">
+		    	<img src="bby-basket-court.jpg" alt="bby-basket-court" class="bottom" />
+		    	<img src="bby-park.jpg" alt="bby-park" class="top" />
+		    </div>
+		    <p id="clickMe">Toggle Image</p>
+		</div><!-- example -->
+	</div>	 <!-- wrapper -->
+	
+	<div class="wrapper">
+		<div class="example example3">
+		    <h1>CSS3 Sliding Transition</h1>
+		    <div class="imagesContainer">
+		    	<div class="images">
+		    		<img src="bby-front-entrance.jpg" alt="bby-front-entrance" />
+		    		<img src="bby-do-not-enter.jpg" alt="bby-do-not-enter" />
+		    		<img src="bby-basket-court.jpg" alt="bby-basket-court" />
+		    		<img src="bby-park.jpg" alt="bby-park" class="top" />
+		    	</div>
+		    </div>
+		    <ul class="controls">
+		    	<li id="btn1">Photo 1</li>
+		    	<li id="btn2">Photo 2</li>
+		    	<li id="btn3">Photo 3</li>
+		    	<li id="btn4">Photo 4</li>
+		    </ul>
+		</div><!-- example -->
+	</div><!-- wrapper -->	
+
+	<div class="wrapper">
+		<div class="example example4">
+			<h1>CSS3 Sliding Transition 2</h1>
+			<div class="imagesContainer">
+				<div class="images">
+					<img src="bby-front-entrance.jpg" alt="bby-front-entrance" />
+					<img src="bby-do-not-enter.jpg" alt="bby-do-not-enter" />
+					<img src="bby-basket-court.jpg" alt="bby-basket-court" />
+					<img src="bby-park.jpg" alt="bby-park" class="top" />
+				</div>
+			</div>
+			<ul class="controls">
+				<li id="btn1">Photo 1</li>
+				<li id="btn2">Photo 2</li>
+				<li id="btn3">Photo 3</li>
+				<li id="btn4">Photo 4</li>
+			</ul>
+		</div><!-- example -->
+	</div><!-- wrapper -->	
+
+	<div class="wrapper">
+		<div class="example example5">
+			<h1>CSS3 Flipping Content</h1>
+			
+			<div class="container">
+				<div class="card shadow">
+					<div class="front face">
+						<img src="bby-basket-court.jpg" alt="bby-basket-court" />
+					</div>
+					<div class="back face center">
+						<p>This is nice for exposing more information about an image.</p>
+						<p>Any content can go here.</p>				
+					</div>
+				</div>
+			</div>
+			
+		</div><!-- example -->
+	</div><!-- wrapper -->			
+	</body>
+</html>
